@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Maria & Alexander | A Celebration of Love — Official Wedding Invitation</title>
+    <meta name="description" content="You are warmly invited to celebrate the wedding of Maria & Alexander on October 24, 2026 at Villa Balbiano, Lake Como, Italy." />
+    <meta name="theme-color" content="#FAF7F2" />
+
+    <!-- OpenGraph Meta Tags -->
+    <meta property="og:title" content="Maria & Alexander — Wedding Invitation" />
+    <meta property="og:description" content="Click to open the digital wedding invitation of Maria & Alexander." />
+    <meta property="og:type" content="website" />
+
+    <!-- Google Fonts: Cormorant Garamond (Editorial Serif), Pinyon Script (Luxury Calligraphy), Montserrat (Refined Sans) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,600&family=Montserrat:wght@200;300;400;500;600&family=Pinyon+Script&display=swap" rel="stylesheet" />
+
+    <link rel="stylesheet" href="/src/style.css" />
+  </head>
+  <body>
+    <!-- Ambient Golden Dust Particles -->
+    <div id="ambient-particles" class="ambient-particles" aria-hidden="true"></div>
+
+    <!-- Floating Audio Controller -->
+    <button id="audio-toggle-btn" class="floating-audio-btn" aria-label="Toggle Romantic Background Music">
+      <span class="audio-icon">♪</span>
+      <span class="audio-label">Music: Off</span>
+    </button>
+
+    <!-- SECTION 1: Full-Viewport Rive Envelope Hero Section -->
+    <main id="hero-section" class="hero-section">
+      <div class="hero-ambient-glow" aria-hidden="true"></div>
+
+      <header class="hero-header">
+        <span class="hero-monogram">M &amp; A</span>
+        <span class="hero-tagline">A Wedding Celebration</span>
+      </header>
+
+      <!-- Rive Canvas Container -->
+      <div id="rive-container" class="rive-wrapper" role="button" tabindex="0" aria-label="Click the envelope to open the invitation">
+        <!-- Smooth Shimmer Loader while fetching .riv file -->
+        <div id="rive-loader" class="rive-loader visible">
+          <div class="wax-seal-spinner">
+            <span class="seal-letter">M</span>
+          </div>
+          <p class="loader-text">Preparing your invitation...</p>
+        </div>
+
+        <!-- Rive High-DPI Canvas -->
+        <canvas id="rive-canvas" class="rive-canvas"></canvas>
+
+        <!-- Luxury Interactive 3D CSS/SVG Envelope Fallback -->
+        <div id="fallback-envelope-container" class="fallback-envelope-container" style="display: none;">
+          <div id="fallback-envelope" class="css-envelope">
+            <div class="env-back"></div>
+            <div class="env-letter-preview">
+              <div class="preview-seal">M &amp; A</div>
+            </div>
+            <div class="env-pocket"></div>
+            <div class="env-flap">
+              <div class="env-wax-seal">
+                <span class="seal-glyph">❦</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Interactive Click-to-Open Hover Cue -->
+      <div id="interactive-cue" class="interactive-cue">
+        <div class="cue-badge">
+          <span class="cue-sparkle">✦</span>
+          <span class="cue-text">Click envelope to open</span>
+          <span class="cue-sparkle">✦</span>
+        </div>
+        <p class="cue-subtext">Design by <span class="studio-credit">JunaidStudios</span></p>
+      </div>
+    </main>
+
+    <!-- SECTION 2: Luxury Wedding Invitation Reveal -->
+    <section id="invitation-card-container" class="invitation-card-container" style="display: none;" aria-live="polite">
+      <div class="invitation-card">
+        <!-- Gold Foil Corner Accents -->
+        <div class="card-ornament top-left"></div>
+        <div class="card-ornament top-right"></div>
+        <div class="card-ornament bottom-left"></div>
+        <div class="card-ornament bottom-right"></div>
+
+        <div class="card-content">
+          <!-- Monogram & Header -->
+          <div class="monogram-wrapper stagger-drift">
+            <div class="monogram-crest">
+              <span class="crest-left">M</span>
+              <span class="crest-amp">&amp;</span>
+              <span class="crest-right">A</span>
+            </div>
+            <div class="crest-divider"></div>
+          </div>
+
+          <p class="intro-text stagger-drift">Together with their families</p>
+
+          <!-- Couple's Editorial Serif Names -->
+          <h1 class="couple-names stagger-drift">
+            <span class="name">Maria Elizabeth Vance</span>
+            <span class="ampersand">&amp;</span>
+            <span class="name">Alexander Cole Wright</span>
+          </h1>
+
+          <!-- Luxury Editorial Arched Couple Portrait -->
+          <div class="couple-portrait-section stagger-drift">
+            <div class="portrait-arch-frame" data-gallery="portrait" role="button" tabindex="0" aria-label="View full portrait of Maria & Alexander">
+              <img
+                src="/assets/images/couple-portrait.jpg"
+                alt="Maria Elizabeth Vance & Alexander Cole Wright overlooking Lake Como"
+                class="portrait-img"
+                loading="eager"
+              />
+              <div class="portrait-frame-border" aria-hidden="true"></div>
+              <div class="portrait-expand-hint" aria-hidden="true">
+                <span class="expand-icon">⤢</span>
+                <span class="expand-text">Expand</span>
+              </div>
+            </div>
+            <div class="portrait-caption">
+              <span class="portrait-flourish">❦</span>
+              <span class="caption-text">Villa Balbiano • Lake Como, Italy</span>
+              <span class="portrait-flourish">❦</span>
+            </div>
+          </div>
+
+          <p class="invitation-phrase stagger-drift">
+            joyfully invite you to share in the celebration of their love as they exchange vows
+          </p>
+
+          <!-- Event Details -->
+          <div class="details-grid stagger-drift">
+            <div class="detail-block">
+              <span class="detail-label">The Date</span>
+              <span class="detail-val-primary">Saturday</span>
+              <span class="detail-val-date">October 24, 2026</span>
+              <span class="detail-val-time">At Four O'Clock in the Afternoon</span>
+            </div>
+
+            <div class="detail-separator" aria-hidden="true"></div>
+
+            <div class="detail-block">
+              <span class="detail-label">The Venue</span>
+              <span class="detail-val-primary">Villa Balbiano</span>
+              <span class="detail-val-date">Lake Como</span>
+              <span class="detail-val-time">Tremezzina, Lombardy, Italy</span>
+            </div>
+          </div>
+
+          <!-- Destination Venue Spotlight Feature -->
+          <div class="venue-showcase-section stagger-drift">
+            <div class="venue-image-card" data-gallery="venue" role="button" tabindex="0" aria-label="View Villa Balbiano destination photograph">
+              <div class="venue-image-frame">
+                <img
+                  src="/assets/images/villa-balbiano.jpg"
+                  alt="Villa Balbiano historic palazzo and Riva motorboat on Lake Como"
+                  class="venue-img"
+                  loading="lazy"
+                />
+                <div class="venue-badge">
+                  <span class="badge-sparkle">✦</span>
+                  <span>16th-Century Historic Palazzo</span>
+                </div>
+                <div class="portrait-expand-hint" aria-hidden="true">
+                  <span class="expand-icon">⤢</span>
+                  <span class="expand-text">Expand</span>
+                </div>
+              </div>
+              <div class="venue-card-body">
+                <span class="venue-subheading">The Destination</span>
+                <h3 class="venue-title">Villa Balbiano &amp; The Lake Como Riviera</h3>
+                <p class="venue-description">
+                  Perched peacefully on the western shores of Tremezzina, Villa Balbiano welcomes guests with centuries-old cypress alleys, grand marble balustrades, and private vintage Riva boat arrivals against the majestic Alpine peaks.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Live Wedding Countdown Timer -->
+          <div class="countdown-section stagger-drift">
+            <span class="countdown-heading">Counting Down to the Celebration</span>
+            <div class="countdown-grid">
+              <div class="cd-box">
+                <span id="cd-days" class="cd-number">--</span>
+                <span class="cd-label">Days</span>
+              </div>
+              <div class="cd-colon">:</div>
+              <div class="cd-box">
+                <span id="cd-hours" class="cd-number">--</span>
+                <span class="cd-label">Hours</span>
+              </div>
+              <div class="cd-colon">:</div>
+              <div class="cd-box">
+                <span id="cd-mins" class="cd-number">--</span>
+                <span class="cd-label">Minutes</span>
+              </div>
+              <div class="cd-colon">:</div>
+              <div class="cd-box">
+                <span id="cd-secs" class="cd-number">--</span>
+                <span class="cd-label">Seconds</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Wedding Day Timeline -->
+          <div class="timeline-section stagger-drift">
+            <h2 class="timeline-heading">Celebration Itinerary</h2>
+            <div class="timeline-events">
+              <div class="timeline-item">
+                <span class="timeline-time">3:30 PM</span>
+                <span class="timeline-name">Welcome &amp; Champagne</span>
+              </div>
+              <div class="timeline-item">
+                <span class="timeline-time">4:30 PM</span>
+                <span class="timeline-name">Botanical Garden Ceremony</span>
+              </div>
+              <div class="timeline-item">
+                <span class="timeline-time">6:00 PM</span>
+                <span class="timeline-name">Sunset Cocktails &amp; Lake Cruise</span>
+              </div>
+              <div class="timeline-item">
+                <span class="timeline-time">8:00 PM</span>
+                <span class="timeline-name">Dinner &amp; Dancing Under the Stars</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Evening Reception & Ambiance Feature -->
+          <div class="reception-feature-section stagger-drift">
+            <div class="reception-image-card" data-gallery="reception" role="button" tabindex="0" aria-label="View evening dinner ambiance photograph">
+              <div class="reception-image-frame">
+                <img
+                  src="/assets/images/reception-ambiance.jpg"
+                  alt="Candlelit wedding banquet dinner on lakeside terrace under chandeliers"
+                  class="reception-img"
+                  loading="lazy"
+                />
+                <div class="portrait-expand-hint" aria-hidden="true">
+                  <span class="expand-icon">⤢</span>
+                  <span class="expand-text">Expand</span>
+                </div>
+              </div>
+              <div class="reception-card-body">
+                <span class="reception-tag">Evening Gala</span>
+                <h3 class="reception-title">Dinner &amp; Dancing Under the Stars</h3>
+                <p class="reception-desc">
+                  Following the garden vows and lake cruise, join us on the grand terrace for an authentic multi-course Italian banquet, Tuscan wines, crystal chandeliers, and dancing beneath the moonlit sky.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Action Buttons -->
+          <div class="actions-wrapper stagger-drift">
+            <button id="open-rsvp-btn" class="btn btn-primary" id="open-rsvp-btn">
+              <span>Kindly Respond (RSVP)</span>
+            </button>
+            <button id="calendar-btn" class="btn btn-secondary" id="calendar-btn">
+              <span>Add to Calendar</span>
+            </button>
+          </div>
+
+          <div class="dress-code stagger-drift">
+            <span>Attire: Black Tie &amp; Evening Elegance</span>
+          </div>
+
+          <div class="card-footer-credit stagger-drift">
+            <span class="credit-flourish">❦</span>
+            <span>Design by <strong class="studio-credit">JunaidStudios</strong></span>
+            <span class="credit-flourish">❦</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Floating Control Bar -->
+      <aside class="floating-control-bar">
+        <button id="replay-btn" class="replay-btn" title="Replay Rive Envelope Animation">
+          <span class="replay-icon">↺</span>
+          <span class="replay-text">Replay Envelope</span>
+        </button>
+      </aside>
+    </section>
+
+    <!-- RSVP Modal Dialog -->
+    <div id="rsvp-modal" class="rsvp-modal-overlay" role="dialog" aria-modal="true" aria-labelledby="rsvp-title">
+      <div class="rsvp-modal-content">
+        <button id="close-rsvp-btn" class="close-modal-btn" aria-label="Close RSVP Dialog">&times;</button>
+        <span class="rsvp-monogram">M &amp; A</span>
+        <h3 id="rsvp-title" class="rsvp-title">RSVP to the Celebration</h3>
+        <p class="rsvp-subtitle">Please respond by September 15, 2026</p>
+
+        <form id="rsvp-form" class="rsvp-form">
+          <div class="form-group">
+            <label for="guest-name">Full Name(s)</label>
+            <input type="text" id="guest-name" required placeholder="e.g. Eleanor &amp; James Montgomery" />
+          </div>
+
+          <div class="form-group">
+            <label for="guest-email">Email Address</label>
+            <input type="email" id="guest-email" required placeholder="name@example.com" />
+          </div>
+
+          <div class="form-group">
+            <label>Will you be attending?</label>
+            <div class="attendance-options">
+              <label class="radio-label">
+                <input type="radio" name="attendance" value="accepts" checked />
+                <span>Joyfully Accepts</span>
+              </label>
+              <label class="radio-label">
+                <input type="radio" name="attendance" value="declines" />
+                <span>Regretfully Declines</span>
+              </label>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="dietary-notes">Dietary Preferences or Allergies</label>
+            <input type="text" id="dietary-notes" placeholder="e.g. Vegetarian, Gluten-free, None" />
+          </div>
+
+          <div class="form-group">
+            <label for="warm-message">A Note for Maria &amp; Alexander</label>
+            <textarea id="warm-message" rows="3" placeholder="Leave a warm wish for the bride &amp; groom..."></textarea>
+          </div>
+
+          <button type="submit" class="btn btn-primary btn-block">Confirm RSVP</button>
+        </form>
+      </div>
+    </div>
+
+    <!-- Editorial Image Lightbox Modal -->
+    <div id="image-lightbox" class="lightbox-overlay" role="dialog" aria-modal="true" aria-hidden="true">
+      <div class="lightbox-backdrop"></div>
+      <div class="lightbox-container">
+        <button id="close-lightbox-btn" class="close-lightbox-btn" aria-label="Close photo view">&times;</button>
+        <div class="lightbox-media-wrap">
+          <img id="lightbox-img" src="" alt="" class="lightbox-img" />
+        </div>
+        <div class="lightbox-caption-bar">
+          <span class="lightbox-tag">Lake Como, Italy</span>
+          <h4 id="lightbox-title" class="lightbox-title"></h4>
+          <p id="lightbox-desc" class="lightbox-desc"></p>
+        </div>
+      </div>
+    </div>
+
+    <!-- RSVP Success Toast -->
+    <div id="rsvp-toast" class="rsvp-toast" role="alert"></div>
+
+    <!-- Main Module Script -->
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
