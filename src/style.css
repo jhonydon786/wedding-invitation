@@ -1581,9 +1581,40 @@ body {
     height: 190px;
   }
 
+  .invitation-card-container {
+    padding: 30px 0 60px;
+    width: 100%;
+  }
+
   .invitation-card {
-    padding: 44px 24px;
+    width: 100%;
+    max-width: 100%;
+    padding: 44px 18px;
+    border-radius: 0;
+    border-left: none;
+    border-right: none;
     outline: none;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+  }
+
+  .card-ornament.top-left {
+    top: 12px;
+    left: 12px;
+  }
+
+  .card-ornament.top-right {
+    top: 12px;
+    right: 12px;
+  }
+
+  .card-ornament.bottom-left {
+    bottom: 12px;
+    left: 12px;
+  }
+
+  .card-ornament.bottom-right {
+    bottom: 12px;
+    right: 12px;
   }
 
   .couple-names {
@@ -1596,7 +1627,8 @@ body {
 
   .details-grid {
     grid-template-columns: 1fr;
-    gap: 20px;
+    gap: 18px;
+    padding: 22px 0;
   }
 
   .detail-separator {
@@ -1639,12 +1671,13 @@ body {
   }
 
   .portrait-arch-frame {
-    max-width: 280px;
-    border-radius: 140px 140px 12px 12px;
+    width: 100%;
+    max-width: 340px;
+    border-radius: 170px 170px 14px 14px;
   }
 
   .portrait-frame-border {
-    border-radius: 130px 130px 8px 8px;
+    border-radius: 160px 160px 10px 10px;
   }
 
   .venue-card-body,
