@@ -89,18 +89,25 @@ body {
 }
 
 /* ==========================================================================
-   Floating Audio Controller
+   Floating Audio Controller & Track Switcher
    ========================================================================== */
-.floating-audio-btn {
+.audio-control-wrapper {
   position: fixed;
   top: 24px;
   right: 28px;
   z-index: 999;
   display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 8px;
+}
+
+.floating-audio-btn {
+  display: flex;
   align-items: center;
   gap: 8px;
   padding: 8px 16px;
-  background: rgba(255, 255, 255, 0.82);
+  background: rgba(255, 255, 255, 0.88);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   border: 1px solid rgba(201, 160, 80, 0.35);
@@ -126,6 +133,7 @@ body {
 .floating-audio-btn.playing {
   border-color: var(--gold-primary);
   color: var(--gold-dark);
+  background: #FFFFFF;
 }
 
 .floating-audio-btn.playing .audio-icon {
@@ -135,6 +143,67 @@ body {
 @keyframes pulseIcon {
   0%, 100% { transform: scale(1); }
   50% { transform: scale(1.3); }
+}
+
+.audio-track-menu {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 6px;
+  background: rgba(255, 255, 255, 0.94);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(201, 160, 80, 0.35);
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(-6px);
+  transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+.audio-control-wrapper:hover .audio-track-menu,
+.audio-control-wrapper:focus-within .audio-track-menu,
+.audio-control-wrapper.menu-open .audio-track-menu,
+.audio-track-menu:hover,
+.audio-track-menu.is-visible {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
+.track-select-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 14px;
+  background: transparent;
+  border: none;
+  border-radius: 8px;
+  font-family: var(--font-sans);
+  font-size: 0.72rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+  text-align: left;
+}
+
+.track-select-btn:hover {
+  background: var(--bg-secondary);
+  color: var(--forest-dark);
+}
+
+.track-select-btn.active {
+  background: rgba(201, 160, 80, 0.15);
+  color: var(--gold-dark);
+  font-weight: 600;
+}
+
+.track-glyph {
+  font-size: 0.6rem;
+  color: var(--gold-primary);
 }
 
 /* ==========================================================================
@@ -1556,9 +1625,12 @@ body {
     width: 100%;
   }
 
-  .floating-audio-btn {
+  .audio-control-wrapper {
     top: 16px;
     right: 16px;
+  }
+
+  .floating-audio-btn {
     padding: 6px 12px;
   }
 

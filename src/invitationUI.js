@@ -41,6 +41,10 @@ export class InvitationUI {
       });
     }
 
+    // Pre-initialize audio contexts on user interaction
+    audioController.initAudioElement();
+    audioController.initContext();
+
     // Gentle pulse on the container
     if (this.riveWrapper) {
       gsap.to(this.riveWrapper, {
@@ -55,7 +59,18 @@ export class InvitationUI {
 
   // Called when envelope animation completes (~1.5s)
   handleOpenComplete() {
-    // 1. Launch luxury gold & champagne confetti burst
+    // 1. Play romantic wedding music automatically on reveal
+    if (!audioController.isMusicPlaying) {
+      audioController.startAmbientMusic();
+      const audioBtn = document.getElementById('audio-toggle-btn');
+      if (audioBtn) {
+        audioBtn.classList.add('playing');
+        const label = audioBtn.querySelector('.audio-label');
+        if (label) label.innerText = 'Music: On';
+      }
+    }
+
+    // 2. Launch luxury gold & champagne confetti burst
     this.launchCelebratoryConfetti();
 
     // 2. Smoothly fade and shrink the envelope canvas
@@ -263,9 +278,10 @@ export class InvitationUI {
     });
   }
 
-  // Music toggle button
+  // Music toggle button and track selector
   initAudioToggle() {
     const audioBtn = document.getElementById('audio-toggle-btn');
+    const trackBtns = document.querySelectorAll('.track-select-btn');
     if (!audioBtn) return;
 
     audioBtn.addEventListener('click', () => {
@@ -275,6 +291,23 @@ export class InvitationUI {
       if (label) {
         label.innerText = isPlaying ? 'Music: On' : 'Music: Off';
       }
+    });
+
+    trackBtns.forEach((btn) => {
+      btn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const trackIdx = parseInt(btn.getAttribute('data-track'), 10);
+        audioController.switchTrack(trackIdx);
+
+        trackBtns.forEach((b) => b.classList.remove('active'));
+        btn.classList.add('active');
+
+        audioBtn.classList.add('playing');
+        const label = audioBtn.querySelector('.audio-label');
+        if (label) {
+          label.innerText = 'Music: On';
+        }
+      });
     });
   }
 

@@ -23,11 +23,23 @@
     <!-- Ambient Golden Dust Particles -->
     <div id="ambient-particles" class="ambient-particles" aria-hidden="true"></div>
 
-    <!-- Floating Audio Controller -->
-    <button id="audio-toggle-btn" class="floating-audio-btn" aria-label="Toggle Romantic Background Music">
-      <span class="audio-icon">♪</span>
-      <span class="audio-label">Music: Off</span>
-    </button>
+    <!-- Floating Audio Controller with Wedding Track Switcher -->
+    <div class="audio-control-wrapper">
+      <button id="audio-toggle-btn" class="floating-audio-btn" aria-label="Toggle Romantic Wedding Music">
+        <span class="audio-icon">♪</span>
+        <span class="audio-label">Music: Off</span>
+      </button>
+      <div id="audio-track-menu" class="audio-track-menu">
+        <button class="track-select-btn active" data-track="0">
+          <span class="track-glyph">✦</span>
+          <span>Romantic Piano &amp; Strings</span>
+        </button>
+        <button class="track-select-btn" data-track="1">
+          <span class="track-glyph">✦</span>
+          <span>Canon in D (Orchestra)</span>
+        </button>
+      </div>
+    </div>
 
     <!-- SECTION 1: Full-Viewport Rive Envelope Hero Section -->
     <main id="hero-section" class="hero-section">
